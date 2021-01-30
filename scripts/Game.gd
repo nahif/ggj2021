@@ -4,9 +4,7 @@ var personaje
 var pantallas
 var esencia_sprite
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var is_finish = false
 
 const SIN_ESENCIA: int = -1
 
@@ -16,12 +14,9 @@ func _ready():
 	pantallas = [$Pantalla1, $Pantalla2, $Pantalla3]
 	esencia_sprite = $Esencia
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 
 func _input(event):
-	if event.is_action_released('ui_accept'):
+	if event.is_action_released('ui_accept') and !is_finish:
 		var esencia = personaje.get_esencia()
 		# qué pantalla estamos, para que nos dé su esencia
 		var pantalla = personaje.get_pantalla()
@@ -34,3 +29,13 @@ func _input(event):
 			print(result)
 			personaje.set_esencia(SIN_ESENCIA)
 			esencia_sprite.set_esencia_texture(SIN_ESENCIA)
+      review_max_screen_level()
+
+func review_max_screen_level():
+	var cant_max = 0
+	for pantalla in pantallas:
+		if pantalla.has_max_level():
+			cant_max += 1
+	if cant_max == pantallas.size():
+		print("HAS GANADO!")
+		is_finish = true
