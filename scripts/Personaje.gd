@@ -5,6 +5,7 @@ var pantallas = [0, 1, 2]
 var posiciones_pantallas = []
 export var esencia_actual = -1
 
+
 # sprite = "asas_" + esencia_actual + "_.png"
 # Declare member variables here. Examples:
 # var a = 2
@@ -20,10 +21,10 @@ func _ready():
 	position = posiciones_pantallas[1].position
 
 func _input(event):
-	if event.is_action_released('ui_right') and pantalla_actual != 2:
+	if event.is_action_pressed('ui_right') and pantalla_actual != 2:
 		goto_pantalla( (pantalla_actual + 1) )
 			
-	if event.is_action_released('ui_left')  and pantalla_actual != 0:
+	if event.is_action_pressed('ui_left')  and pantalla_actual != 0:
 		goto_pantalla( (pantalla_actual - 1) )
 
 func goto_pantalla(index):
