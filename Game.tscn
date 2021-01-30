@@ -1,13 +1,40 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/Pantalla.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Personaje.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/placeholders/blueprint.png" type="Texture" id=3]
+[ext_resource path="res://scenes/Personaje.gd" type="Script" id=4]
 
 [node name="Game" type="Node2D"]
 
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
+z_index = -100
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Personaje" parent="." instance=ExtResource( 2 )]
+position = Vector2( 212.293, 555.98 )
+script = ExtResource( 4 )
+
 [node name="Pantalla" parent="." instance=ExtResource( 1 )]
-position = Vector2( 136.516, 334.722 )
+position = Vector2( 151.348, 298.052 )
 
 [node name="Pantalla2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 358.306, 336.721 )
+position = Vector2( 384.046, 240.602 )
 id = 2
 level = 4
+
+[node name="Pantalla3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 576.434, 280.931 )
+
+[node name="Positions" type="Node" parent="."]
+
+[node name="PosicionPantalla1" type="Position2D" parent="Positions"]
+position = Vector2( 216, 598 )
+
+[node name="PosicionPantalla2" type="Position2D" parent="Positions"]
+position = Vector2( 356, 542 )
+
+[node name="PosicionPantalla3" type="Position2D" parent="Positions"]
+position = Vector2( 500, 588 )
