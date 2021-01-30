@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/Combinator.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://scripts/Essence.gd" type="Script" id=3]
+[ext_resource path="res://assets/sprites/light.png" type="Texture" id=4]
+[ext_resource path="res://scripts/CombinationLight.gd" type="Script" id=5]
 
 [node name="Combinator" type="Node2D"]
 script = ExtResource( 1 )
@@ -17,6 +19,7 @@ position = Vector2( 133, 444 )
 texture = ExtResource( 2 )
 
 [node name="SelectionPoints" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="SelectionPoint1" type="Position2D" parent="SelectionPoints"]
 position = Vector2( 134, 443 )
@@ -28,6 +31,7 @@ position = Vector2( 503, 437 )
 position = Vector2( 866, 436 )
 
 [node name="Essences" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="Essence1" type="Sprite" parent="Essences"]
 position = Vector2( 135.18, 535.18 )
@@ -48,12 +52,29 @@ texture = ExtResource( 2 )
 script = ExtResource( 3 )
 
 [node name="Spaces" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="Space1" type="Position2D" parent="Spaces"]
-position = Vector2( 309.141, 243.767 )
+position = Vector2( 279.667, 286.925 )
 
 [node name="Space2" type="Position2D" parent="Spaces"]
-position = Vector2( 520.776, 232.687 )
+position = Vector2( 521.829, 293.74 )
 
 [node name="Space3" type="Position2D" parent="Spaces"]
-position = Vector2( 750.139, 237.119 )
+position = Vector2( 779.613, 285.54 )
+
+[node name="CombinationPoint" type="Position2D" parent="."]
+position = Vector2( 516.842, 158.947 )
+
+[node name="CombinationLight" type="Light2D" parent="."]
+visible = false
+position = Vector2( 516.316, 158.421 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 4 )
+script = ExtResource( 5 )
+
+[node name="FinalResult" type="Sprite" parent="."]
+visible = false
+position = Vector2( 518.374, 160.381 )
+scale = Vector2( 2.47672, 2.20823 )
+texture = ExtResource( 2 )
