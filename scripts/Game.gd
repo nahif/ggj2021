@@ -25,11 +25,11 @@ func _input(event):
 			personaje.set_esencia(esencia_de_la_pantalla_actual)
 			esencia_sprite.set_esencia_texture(esencia_de_la_pantalla_actual)
 		else :
-			var result = pantallas[pantalla].give_esencia(esencia) 
+			var result = pantallas[pantalla].give_esencia(esencia)
 			print(result)
 			personaje.set_esencia(SIN_ESENCIA)
 			esencia_sprite.set_esencia_texture(SIN_ESENCIA)
-      review_max_screen_level()
+		review_max_screen_level()
 
 func review_max_screen_level():
 	var cant_max = 0
