@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/Pantalla.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Personaje.tscn" type="PackedScene" id=2]
@@ -7,6 +7,9 @@
 [ext_resource path="res://scripts/Game.gd" type="Script" id=5]
 [ext_resource path="res://scripts/Esencia.gd" type="Script" id=6]
 [ext_resource path="res://assets/sprites/esencias/empty.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/screens/s0.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/screens/s1.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/screens/s2.png" type="Texture" id=10]
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 5 )
@@ -28,15 +31,30 @@ position = Vector2( 212.293, 555.98 )
 script = ExtResource( 4 )
 
 [node name="Pantalla1" parent="." instance=ExtResource( 1 )]
-position = Vector2( 151.348, 298.052 )
+position = Vector2( 68.1932, 144.342 )
+
+[node name="Sprite" type="Sprite" parent="Pantalla1"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 8 )
+centered = false
 
 [node name="Pantalla2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 384.046, 240.602 )
+position = Vector2( 278.213, 112.09 )
 id = 1
 
+[node name="Sprite" type="Sprite" parent="Pantalla2"]
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 9 )
+centered = false
+
 [node name="Pantalla3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 576.434, 280.931 )
+position = Vector2( 494.379, 173.902 )
 id = 2
+
+[node name="Sprite" type="Sprite" parent="Pantalla3"]
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 10 )
+centered = false
 
 [node name="Positions" type="Node" parent="."]
 
