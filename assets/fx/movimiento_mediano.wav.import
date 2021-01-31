@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/movimiento_mediano.wav-f958d401ba9632d7e5870bc7abc6e32a.sample"
+
+[deps]
+
+source_file="res://assets/fx/movimiento_mediano.wav"
+dest_files=[ "res://.import/movimiento_mediano.wav-f958d401ba9632d7e5870bc7abc6e32a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

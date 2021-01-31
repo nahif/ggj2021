@@ -3,16 +3,18 @@ extends Node2D
 var personaje
 var pantallas
 var esencia_sprite
+var audioPlayer
 
 var is_finish = false
 
 const SIN_ESENCIA: int = -1
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	personaje = $Personaje
 	pantallas = [$Pantalla1, $Pantalla2, $Pantalla3]
 	esencia_sprite = $Esencia
+	audioPlayer = $AudioPlayer
+	personaje.connect("movement", self, "_on_player_movement")
 
 
 func _input(event):
@@ -24,11 +26,15 @@ func _input(event):
 			var esencia_de_la_pantalla_actual = pantallas[pantalla].get_esencia()
 			personaje.set_esencia(esencia_de_la_pantalla_actual)
 			esencia_sprite.set_esencia_texture(esencia_de_la_pantalla_actual)
+			audioPlayer.play_recieve()
 		else :
 			var result = pantallas[pantalla].give_esencia(esencia)
-			print(result)
 			personaje.set_esencia(SIN_ESENCIA)
 			esencia_sprite.set_esencia_texture(SIN_ESENCIA)
+			if result:
+				audioPlayer.play_send()
+			else:
+				audioPlayer.play_error()
 		review_max_screen_level()
 
 func review_max_screen_level():
@@ -39,3 +45,6 @@ func review_max_screen_level():
 	if cant_max == pantallas.size():
 		print("HAS GANADO!")
 		is_finish = true
+
+func _on_player_movement():
+	audioPlayer.play_move()

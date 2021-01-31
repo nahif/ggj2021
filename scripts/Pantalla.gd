@@ -10,20 +10,17 @@ var screen
 
 func _ready():
 	screen = get_node("PantallaActual")
-	var texture = load(SpriteManager.get_screen_texture(id,level))
-	screen.set_texture(texture)
+	screen.set_texture(SpriteManager.get_screen_texture(id,level))
 	pass
 
 func get_esencia():
 	return id
 
 func give_esencia(essence_id):
-	print(id, level)
 	if MAX_LEVEL == level or !RelationshipManager.is_the_next_essence(id, level, essence_id):
 		return false
 	level += 1
-	var texture = load(SpriteManager.get_screen_texture(id,level))
-	screen.set_texture(texture)
+	screen.set_texture(SpriteManager.get_screen_texture(id,level))
 	return true
 
 func has_max_level():

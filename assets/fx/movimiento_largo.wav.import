@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/movimiento_largo.wav-45ebccf83d7d036988e9a0c4206791e1.sample"
+
+[deps]
+
+source_file="res://assets/fx/movimiento_largo.wav"
+dest_files=[ "res://.import/movimiento_largo.wav-45ebccf83d7d036988e9a0c4206791e1.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

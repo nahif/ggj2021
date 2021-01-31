@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/placeholders/1_pecera.png" type="Texture" id=1]
+[ext_resource path="res://assets/placeholders/2_piso_pecera.png" type="Texture" id=2]
+[ext_resource path="res://assets/placeholders/7_brillo_pecera.png" type="Texture" id=3]
+
+[node name="FondoPecera" type="Node2D"]
+
+[node name="Principal" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Fondo" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Sombra" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+centered = false

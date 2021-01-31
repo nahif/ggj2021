@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/error_corto.wav-f98e413873b60eea1190c21a5772fe2a.sample"
+
+[deps]
+
+source_file="res://assets/fx/error_corto.wav"
+dest_files=[ "res://.import/error_corto.wav-f98e413873b60eea1190c21a5772fe2a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
