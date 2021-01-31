@@ -8,9 +8,9 @@ func _ready():
 
 func set_esencia_texture(id):
 	if id == -1:
-		set_texture(SpriteManager.get_esencia_vacia() )
+		set_texture(SpriteManager.get_esencia_vacia())
 	else:
-		set_texture(SpriteManager.get_esencia(id) )
+		set_texture(SpriteManager.get_esencia(id))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/toma3_r1.ogg-1eb75c0dd30f8af54ea5ade558ec1789.oggstr"
+
+[deps]
+
+source_file="res://assets/music/toma3_r1.ogg"
+dest_files=[ "res://.import/toma3_r1.ogg-1eb75c0dd30f8af54ea5ade558ec1789.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

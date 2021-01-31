@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/intro_30s_1layer_r4.ogg-e92f725ef243f5277c6281c9c1bfdbe0.oggstr"
+
+[deps]
+
+source_file="res://assets/music/intro_30s_1layer_r4.ogg"
+dest_files=[ "res://.import/intro_30s_1layer_r4.ogg-e92f725ef243f5277c6281c9c1bfdbe0.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

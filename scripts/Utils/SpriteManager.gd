@@ -4,11 +4,13 @@ const characterA:Array = [preload("res://assets/sprites/characters/a0.png"),prel
 const characterB:Array = [preload("res://assets/sprites/characters/b0.png"),preload("res://assets/sprites/characters/b1.png" ),preload("res://assets/sprites/characters/b2.png" ),preload("res://assets/sprites/characters/b3.png" ),preload("res://assets/sprites/characters/b4.png") ]
 const characterC:Array = [preload("res://assets/sprites/characters/c0.png"),preload("res://assets/sprites/characters/c1.png" ), preload("res://assets/sprites/characters/c2.png"),preload("res://assets/sprites/characters/c3.png" ),preload("res://assets/sprites/characters/c4.png" )]
 
-const esencias:Array = [preload("res://assets/sprites/esencias/e0.png"),preload("res://assets/sprites/esencias/e1.png" ), preload("res://assets/sprites/esencias/e2.png" )]
+const esencias:Array = [preload("res://assets/sprites/esencias/e0.png"),
+						preload("res://assets/sprites/esencias/e1.png"), 
+						preload("res://assets/sprites/esencias/e2.png")]
 
 const esencia_vacia:Array = [preload("res://assets/sprites/esencias/empty.png")]
 
-const prota:Array  =[preload("res://assets/sprites/prota/persEntregaIZ.png"),preload("res://assets/sprites/prota/persEntregaD.png"),preload("res://assets/sprites/prota/persEntregaD.png")]
+const prota:Array  =[preload("res://assets/sprites/prota/persEntregaIZ.png"), preload("res://assets/sprites/prota/persEntregaC.png"),preload("res://assets/sprites/prota/persEntregaD.png")]
 
 const charactersTexture:Array = [characterA, characterB, characterC]
 

@@ -7,7 +7,7 @@ export var esencia_actual = -1
 var sprite
 
 var wait= 0
-const WAIT_TIME:float = 0.5
+const WAIT_TIME:float = 0.01
 
 signal movement
 

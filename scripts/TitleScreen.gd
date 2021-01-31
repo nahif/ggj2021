@@ -1,6 +1,6 @@
 extends Node2D
 
-export var waiting_time = 5
+export var waiting_time = 4
 
 func _ready():
 	$InitFx.play()

@@ -5,9 +5,12 @@ var pantallas
 var esencia_sprite
 var audioPlayer
 
+var winning_screen_count = 0
+
 var is_finish = false
 
 const SIN_ESENCIA: int = -1
+export var winning_time = 4
 
 func _ready():
 	personaje = $Personaje
@@ -15,6 +18,7 @@ func _ready():
 	esencia_sprite = $Esencia
 	audioPlayer = $AudioPlayer
 	personaje.connect("movement", self, "_on_player_movement")
+	$Musica.play()
 
 
 func _input(event):
@@ -42,9 +46,17 @@ func review_max_screen_level():
 	for pantalla in pantallas:
 		if pantalla.has_max_level():
 			cant_max += 1
+	if winning_screen_count < cant_max:
+		audioPlayer.play_winning()
+		winning_screen_count = cant_max
 	if cant_max == pantallas.size():
-		print("HAS GANADO!")
+		$Timer.connect("timeout", self, "_go_to_victory")
+		$Timer.set_wait_time(winning_time)
+		$Timer.start()
 		is_finish = true
 
 func _on_player_movement():
 	audioPlayer.play_move()
+
+func _go_to_victory():
+	get_tree().change_scene("res://GameCompletedScreen.tscn")

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/camara.ogg-3faac9575bcbd356f48046bf1b74ae3c.oggstr"
+
+[deps]
+
+source_file="res://assets/fx/camara.ogg"
+dest_files=[ "res://.import/camara.ogg-3faac9575bcbd356f48046bf1b74ae3c.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
