@@ -1,0 +1,116 @@
+setcps(128/120)
+
+hush
+
+d1 $ slow 8 $ slowcat [
+  layer[fast 8, id] $ striate' 2 0.6 $ sound "909:6(4, 4)" # orbit 3
+] # gain 0.67 # cutoff 5500 # orbit 3
+
+d1 $ slow 8 $ slowcat [
+  layer[slow 2, slow 16] $ sound "{909:6(2, 8), bd:6(8, 8)} {909:6(3, 8), 909:6(4, 8)} {909:6(4, 8), 909:6(8, 8)} {909:6(2, 8), 909:6(12, 8)}" # freq 180,
+  layer[fast 2] $ striate' 2 0.6 $ sound "<909:6(6, 4), 909:2(8, 4)>",
+  stack [
+    fast 8 $ sound "[{less:6(4, 8), 909:6(3, 8)} {less:6(3, 8), 909:6(4, 8)}]/2" # cutoff 7500 # hcutoff 500,
+    layer[slow 4] $ striate' 2 0.6 $ sound "<bd:6(2, 4), bd:2(4, 4)>"
+  ],
+  striate' 8 0.5 $ slow 8 $ fast 8 $ sound "[{less:6(4, 8), 909:6(4, 8)} {less:6(3, 8), 909:4(2, 8)}]/2" # cutoff 5500,
+  layer[fast 4, slow 16] $ sound "[{909:6(12, 8), 909:6(4, 8)} {bd:6(3, 8), 909:6(4, 8)}]/2" # freq 250 # cutoff 2500,
+  struct "1 0 1 0" $ layer[fast 2, slow 16] $ sound "[{909:6(4, 8), less:6(4, 8)} {bd:6(3, 8), 909:6(4, 8)}]/2" # freq 250 # cutoff 2500
+] # gain 0.75 # orbit 8
+
+d1 $ every 16 (slow 8) $ slow 32 $ slowcat [
+  layer[fast 4, slow 8] $ stack [
+    sound "[{909:6(12, 8), 909:6(4, 8)} {bd:6(3, 8), 909:6(4, 8)}]/2" # freq 250 # cutoff 2500,
+    stack [
+      fast 2 $ sound "[{less:6(4, 8), 909:6(3, 8)} {less:6(3, 8), 909:6(4, 8)}]/2" # cutoff 5500 # hcutoff 1100
+      ]
+    ],
+    layer[fast 2, slow 16] $ sound "{909:6(2, 8), bd:6(8, 8)} {909:6(3, 8), 909:6(4, 8)} {909:6(4, 8), 909:6(8, 8)} {909:6(2, 8), 909:6(12, 8)}" # freq 180,
+    stack [
+      fast 8 $ sound "[{less:6(4, 8), 909:6(3, 8)} {less:6(3, 8), 909:6(4, 8)}]/2" # cutoff 7500 # hcutoff 5100,
+      layer[slow 4] $ striate' 2 0.3 $ sound "<bd:6(2, 4), bd:2(4, 4)>"
+    ],
+    striate' 8 0.5 $ slow 16 $ fast 8 $ sound "[{less:6(8, 8), 909:6(4, 8)} {less:6(3, 8), 909:4(2, 8)}]/2" # cutoff 7500,
+    stack [
+      layer[slow 4] $ striate' 2 0.6 $ sound "<bd:6(2, 4), bd:2(4, 4)>",
+      fast 8 $ sound "[{less:6(4, 8), 909:6(3, 8)} {less:6(3, 8), 909:6(4, 8)}]/2" # cutoff 250
+    ],
+    stack [
+      striate' 8 0.3 $ slow 4 $ fast 8 $ sound "[{less:6(4, 8), 909:6(4, 8)} {less:6(3, 8), 909:4(2, 8)}]/2" # cutoff 3500,
+      layer[slow 4] $ striate' 2 0.6 $ sound "<bd:6(2, 4), bd:2(4, 4)>" # cutoff 1500,
+      fast 4 $ sound "[{less:6(4, 8), 909:6(3, 8)} {less:6(3, 8), 909:6(4, 8)}]/2" # cutoff 550
+    ],
+    stack [
+      layer[slow 4] $ striate' 2 0.6 $ sound "<bd:6(2, 4), bd:2(4, 4)>",
+      fast 8 $ sound "[{less:6(4, 8), 909:6(3, 8)} {less:6(3, 8), 909:6(4, 8)}]/2" # cutoff 250
+    ],
+    layer[fast 4, slow 16] $ sound "[{909:6(8, 8), 909:6(4, 8)} {bd:6(3, 8), 909:6(4, 8)}]/2" # freq 250 # cutoff 2500,
+    layer[fast 2, slow 16] $ struct "1 0 1 0" $ sound "[{909:6(4, 8), less:6(4, 8)} {bd:6(3, 8), 909:6(4, 8)}]/2" # freq 250 # cutoff 2500
+] # gain 0.45 # room 2 # orbit 8
+
+d1 $ slow 16 $ stack [
+  layer[slow 4] $ striate' 2 0.6 $ sound "<bd:6(2, 4), bd:2(4, 4)>",
+  fast 8 $ sound "[{less:6(4, 8), 909:6(3, 8)} {less:6(3, 8), 909:6(4, 8)}]/2" # cutoff 250
+] # gain 0.25 # room 2
+
+d12 $ stack [
+  slow 4 $ n "[2 7 7 8] [ 7 [7 8] 8 12] [12 8 12 12] [8 12 15 15]" + 12 # legato "0.25 1 1 0.5" # sound "midi",
+  slow 8 $ n "[2 7 7 8] [ 7 [7 8] 8 12] [12 8 12 12] [8 12 15 15]" + 12 # legato "0.125" # sound "midi",
+  slow 16 $ n "[2 7 7 8]/2 [ 7 [7 8] 8 12]/2 [2 7 7 8]/2 [2 7 7 8]/2 [2 7 7 8]/2" - 24 # legato "0.25 0.5 0.25 0.25" # sound "midi" # midichan 2
+]
+
+d12 $ stack [
+  slow 4 $ n "[2 7 7 8] [ 7 [7 8] 8 12] [12 8 12 12] [8 12 15 15]" + 12 # legato "0.25 1 1 0.5" # sound "midi",
+  slow 8 $ n "[ 7 [7 8] 8 12] [12 8 12 12]/2 [12 8 12 12]/2 [ 7 [7 8] 8 12] "#  legato "0.125" # sound "midi",
+  slow 16 $ n "[2 7 7 8]/2 [ 7 [7 8] 8 12]/2 [2 7 7 8]/2 [2 7 7 8]/2 [2 7 7 8]/2" - 24 # legato "0.25 0.5 0.25 0.25" # sound "midi" # midichan 2
+]
+
+d12 $ layer [fast 2, slow 8, slow 16] $ slowcat [
+  slow 4 $ n "[2 7 7 8] [ 7 [7 8] 8 12] [12 8 12 12] [8 12 15 15]" + 12 # legato "0.25 1 1 0.5" # sound "midi",
+  slow 8 $ n "[2 7 7 8]/2 [ 7 [7 8] 8 12]/2 [2 7 7 8]/2 [2 7 7 8]/2 [2 7 7 8]/2" - 12 # legato "0.25 0.5 0.25 0.25" # sound "midi" # midichan 0,
+  slow 16 $ n "[ 7 [7 8] 8 12] [12 8 12 12]/2 [12 8 12 12]/2 [ 7 [7 8] 8 12] " - 24 # legato "0.5 0.5 0.25 0.25" # sound "midi" # midichan 0,
+  slow 4 $ n "[12 8 12 12] [8 12 15 15] [ 7 [7 8] 8 12] [8 12 15 15]" + 12 # legato "0.5 0.5 0.25 0.25" # sound "midi" # midichan 0
+] # velocity 0.5 # gain 0.3
+
+d12 $ layer [slow 4, slow 32, slow 16] $ n "[2 7 7 8] [ 7 [7 8] 8 12] [12 8 12 12] [8 12 15 15]" # legato "0.25 0.75 0.75 0.5" # sound "midi"
+
+hush
+
+unsolo 12
+
+
+-- d1 $ slow 8 $ slowcat [
+--   layer[slow 2, slow 16] $ sound "{909:6(4, 8), bd:6(8, 8)} {909:6(3, 8), 909:6(4, 8)} {909:6(1, 8), 909:6(8, 8)} {909:6(2, 8), 909:6(12, 8)}",
+--   layer[fast 4, id] $ striate' 2 0.6 $ sound "909:6(4, 4)",
+--   fast 4 $ sound "[{909:6(4, 8), 909:6(4, 8)} {909:6(3, 8), 909:6(4, 8)}]/2",
+--   layer[fast 8, slow 8] $ sound "[{hexer:6(12, 8), hexer:6(4, 8)} {hexer:6(3, 8), hexer:6(4, 8)}]/2"
+-- ] # gain 0.85 # cutoff 1500 # orbit 3
+
+d2 $ sound "less:1(1, 8)" # gain 0.5 # orbit 12
+
+d3 $ slow 4 $ sound "bd:6(4, 8)" # orbit 3 # gain 0.4
+
+d5 $ sound "909:4(2, 8)" # orbit 5 # gain 0.4
+
+d5 $ sound "909:4(1, 8, 1)" # orbit 5 # gain 0.4
+
+d6 $ slow 2 $ sound "less:1(1, 8, 1)" # orbit 6 # gain 0.6 # cutoff 1500
+
+d7 $ slow 2 $ sound "<gra:7(3, 8), gra:1(4, 8, 1)>/4 [gra:1(3, 8, 4) rep:4(2, 8, 1)]" # orbit 7 # gain 0.4 # freq 1024
+
+d10 $ layer [slow 2, slow 8] $ sound "co:2(1, 8, 2)" # orbit 10 # gain 0.35 # freq 512 # degrade 0.6 # room 2
+
+unsolo 11
+
+d11 $ layer [slow 4, ghost] $ striate' 3 0.5 $ sound "sundance:2(3, 8)" # orbit 11 # gain 0.4 # freq 256 # room 1.1 # delay 0.02
+
+
+hush --  {gra:6(3, 8), gra:6(4, 8)} {gra:6(1, 8), gra:6(8, 8)} {gra:6(2, 8), gra:6(12, 8)}"
+
+
+  layer[fast 8, id] $ striate' 2 0.6 $ sound "909:6(4, 4)",
+  fast 2 $ sound "[{909:6(4, 8), 909:6(4, 8)} {909:6(3, 8), 909:6(4, 8)}]/2",
+  layer[fast 4, slow 8] $ sound "[{909:6(12, 8), 909:6(4, 8)} {909:6(3, 8), 909:6(4, 8)}]/2"
+] # gain 1 # cutoff 1500
+
+hush
