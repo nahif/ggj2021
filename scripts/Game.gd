@@ -2,6 +2,7 @@ extends Node2D
 
 var personaje
 var pantallas
+var luces
 var esencia_sprite
 var audioPlayer
 
@@ -15,6 +16,7 @@ export var winning_time = 4
 func _ready():
 	personaje = $Personaje
 	pantallas = [$Pantalla1, $Pantalla2, $Pantalla3]
+	luces = [$Luces/Luces1, $Luces/Luces2, $Luces/Luces3]
 	esencia_sprite = $Esencia
 	audioPlayer = $AudioPlayer
 	personaje.connect("movement", self, "_on_player_movement")
@@ -37,6 +39,7 @@ func _input(event):
 			esencia_sprite.set_esencia_texture(SIN_ESENCIA)
 			if result:
 				audioPlayer.play_send()
+				luces[pantalla].next_level()
 			else:
 				audioPlayer.play_error()
 		review_max_screen_level()

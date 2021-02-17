@@ -1,8 +1,8 @@
 extends Sprite
 
-export var velocity = 10
-export var max_y = 480
-export var min_y = 470
+export var velocity = 20
+export var max_y = 960
+export var min_y = 940
 
 var direction = 1
 

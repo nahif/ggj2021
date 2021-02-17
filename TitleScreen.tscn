@@ -11,17 +11,15 @@
 script = ExtResource( 4 )
 
 [node name="Galaxy" parent="." instance=ExtResource( 1 )]
-scale = Vector2( 0.75, 0.75 )
 
 [node name="logo_preliminar" type="Sprite" parent="."]
-position = Vector2( 264.636, 233.465 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 541.822, 456.911 )
 texture = ExtResource( 2 )
 
 [node name="InitFx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 
 [node name="press_spacebar" type="Sprite" parent="."]
-position = Vector2( 267, 486.268 )
+position = Vector2( 540, 921.398 )
 texture = ExtResource( 5 )
 script = ExtResource( 6 )

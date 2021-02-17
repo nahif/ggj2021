@@ -14,6 +14,12 @@ const prota:Array  =[preload("res://assets/sprites/prota/persEntregaIZ.png"), pr
 
 const charactersTexture:Array = [characterA, characterB, characterC]
 
+const lucesAzul:Array = [preload("res://assets/sprites/luces/LAZUL_0.png"),preload("res://assets/sprites/luces/LAZUL_1.png"),preload("res://assets/sprites/luces/LAZUL_2.png"),preload("res://assets/sprites/luces/LAZUL_3.png"),preload("res://assets/sprites/luces/LAZUL_4.png")];
+const lucesRojo:Array = [preload("res://assets/sprites/luces/LROJO_0.png"),preload("res://assets/sprites/luces/LROJO_1.png"),preload("res://assets/sprites/luces/LROJO_2.png"),preload("res://assets/sprites/luces/LROJO_3.png"),preload("res://assets/sprites/luces/LROJO_4.png")];
+const lucesVerde:Array = [preload("res://assets/sprites/luces/LVERDE_0.png"),preload("res://assets/sprites/luces/LVERDE_1.png"),preload("res://assets/sprites/luces/LVERDE_2.png"),preload("res://assets/sprites/luces/LVERDE_3.png"),preload("res://assets/sprites/luces/LVERDE_4.png")]
+
+const luces:Array = [lucesVerde, lucesRojo, lucesAzul];
+
 static func get_screen_texture(id, level):
 	return charactersTexture[id][level]
 
@@ -25,3 +31,6 @@ static func get_esencia(id):
 
 static func get_prota(id):
 	return prota[id]
+
+static func get_luces_texture(id, level):
+	return luces[id][level]

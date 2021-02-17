@@ -9,6 +9,6 @@ func _ready():
 
 func _process(delta):
 	position.x -= delta * velocity
-	if position.x <= -4050:
-		position.x = position.x + 4050 
+	if position.x <= -5400:
+		position.x = position.x + 5400 
 	pass
